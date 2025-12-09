@@ -75,7 +75,8 @@ void set_halo_properties(double halo_mass, double M_turn_a, double M_turn_m,
     }
 
     // no rng for escape fraction yet
-    fesc = fmin(consts->fesc_10 * pow(halo_mass / 1e10, consts->alpha_esc), 1);
+    fesc = fmin(consts->fesc_10 * pow(halo_mass / 1e10, consts->alpha_esc), 1) *
+           pow((1 + consts->redshift) / 8, consts->beta_esc);
     if (astro_options_global->USE_MINI_HALOS)
         fesc_mini = fmin(consts->fesc_7 * pow(halo_mass / 1e7, consts->alpha_esc), 1);
 

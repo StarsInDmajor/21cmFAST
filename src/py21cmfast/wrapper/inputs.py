@@ -1084,6 +1084,8 @@ class AstroParams(InputStruct):
     ALPHA_ESC : float, optional
         Power-law index of escape fraction as a function of halo mass. See Sec 2.1 of
         Park+2018.
+    BETA_ESC : float, optional
+        Power-law index of escape fraction as a function of redshifts.
     M_TURN : float, optional
         Turnover mass (in log10 solar mass units) for quenching of star formation in
         halos, due to SNe or photo-heating feedback, or inefficient gas accretion.
@@ -1176,6 +1178,10 @@ class AstroParams(InputStruct):
     )
     ALPHA_ESC: float = field(
         default=-0.5,
+        converter=float,
+    )
+    BETA_ESC: float = field(
+        default=0,
         converter=float,
     )
     F_ESC7_MINI: float = field(

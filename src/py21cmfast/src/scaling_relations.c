@@ -63,6 +63,7 @@ void set_scaling_constants(double redshift, ScalingConstants *consts, bool use_p
     consts->sigma_xray = astro_params_global->SIGMA_LX;
 
     consts->alpha_esc = astro_params_global->ALPHA_ESC;
+    consts->beta_esc = astro_params_global->BETA_ESC;
     consts->fesc_10 = astro_params_global->F_ESC10;
     consts->fesc_7 = astro_params_global->F_ESC7_MINI;
 
